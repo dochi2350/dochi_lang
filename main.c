@@ -16,7 +16,7 @@ int main()
 
     for(i = 0; i < inputlength; i++) { //코드 처음부터 끝까지 한글자씩 확인
         if(input[i] == 73) { //i번째 글자가 대문자 i(I)라면... 한개라면 입력
-            if(input[i + 1] == 73) { //만약 i+1번째 글자가 대문자 i(I)라면... 두개라면 출력
+            if(input[i + 1] == 73) { //만약 i + 1번째 글자가 대문자 i(I)라면... 두개라면 출력
                 int j = 0;
                 while(input[i + 3] != 33) {
                     variables[variablecnt][j++] = input[i + 3];
@@ -33,7 +33,7 @@ int main()
                 if(codeerror == 1) break;
                 printf("%d", variablesvalue[variablewhere]);
             }
-            else if(input[i + 1] != 33) { //만약 i+1번째 글자가 느낌표(!)가 아닌 다른 글자라면
+            else if(input[i + 1] != 33) { //만약 i + 1번째 글자가 느낌표(!)가 아닌 다른 글자라면
                 codeerror = 1; //코드에러
                 break; //컴파일 종료
             }

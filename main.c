@@ -5,8 +5,8 @@
 int main()
 {
     char input[10003];
-    char variables[1003][1003];
-    int variablesvalue[1003] = {0, };
+    char variables[1030][1030];
+    int variablesvalue[1030] = {0, };
 
     scanf("%s", input); //코드 입력
     int inputlength = strlen(input); //코드 길이
@@ -26,16 +26,20 @@ int main()
                 i++;
             }
             printf("%s\n", variables[variablecnt]);
-            int newvariablelength = strlen(variables[variablecnt++]);
-            printf("%d\n", newvariablelength);
+            int newvariablelength = strlen(variables[variablecnt]);
+            printf("len %d\n", newvariablelength);
 
             int k, variablewhere = 0;
-            for(k = newvariablelength; k > 0; k--) {
-                if(variables[k] == 41) variablewhere += pow(2, k);
-                else if(variable[k] == 40) variablewhere += 0;
+            for(k = newvariablelength - 1; k >= 0; k--) {
+                if(variables[variablecnt][k] == 41) variablewhere += pow(2, newvariablelength - k - 1);
+                else if(variables[variablecnt][k] == 40) variablewhere += 0;
                 else codeerror = 1;
+                printf("k %d %d %c\n", k, variablewhere, variables[variablecnt][k]);
             }
             if(codeerror == 1) break;
+            variablesvalue[variablewhere] = 1;
+            variablecnt++;
+            printf("where %d %d\n", variablewhere, variablesvalue[variablewhere]);
         }
     }
     if(codeerror == 1) printf("error\n");

@@ -5,12 +5,15 @@ int main()
 {
     char input[10003];
     char variables[1003][1003];
+    int variablesvalue[1003] = {1, };
 
     scanf("%s", input); //코드 입력
     int inputlength = strlen(input); //코드 길이
 
     int i, codeerror = 0;
     int variablecnt = 0;
+
+    for(i = 0; i < 1003; i++) variablesvalue[i] = 1;
 
     for(int i = 0; i < inputlength; i++) { //코드 처음부터 끝까지 한글자씩 확인
         if(input[i] == 73) { //i번째 글자가 대문자 i(I)라면...

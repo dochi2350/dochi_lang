@@ -26,7 +26,9 @@ int main()
                 variables[variablecnt][j++] = input[i + 2];
                 i++;
             }
-            printf("%s\n", variables[variablecnt++]);
+            printf("%s\n", variables[variablecnt]);
+            int newvariablelength = strlen(variables[variablecnt++]);
+            printf("%d\n", newvariablelength);
         }
     }
     if(codeerror == 1) printf("error\n");
